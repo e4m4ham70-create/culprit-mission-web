@@ -1,49 +1,153 @@
+/* =====================================================
+   용의자 카드 페이지 전용 스타일
+   suspects-extra.css
+===================================================== */
 
-/* suspects.html 추가 스타일 */
+
+/* 제목 아래 안내 영역 */
+
+.suspect-title-area {
+  margin-bottom: 18px;
+}
+
+.suspect-title-area h2 {
+  margin-bottom: 6px;
+}
+
+.suspect-guide {
+  margin: 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+
+/* =====================================================
+   용의자 전체 GRID
+===================================================== */
+
 .suspect-grid {
   display: grid;
+
+  /* PC에서는 3열 */
   grid-template-columns: repeat(3, minmax(0, 1fr));
+
   gap: 18px;
-  margin-top: 16px;
+
+  align-items: stretch;
 }
+
+
+/* =====================================================
+   개별 용의자 카드
+===================================================== */
 
 .suspect-card {
   margin: 0;
-  background: #fff;
-  border: 1px solid var(--line);
+
+  width: 100%;
+
+  /*
+    모든 카드 높이를 동일하게 설정
+  */
+  height: 360px;
+
+  background: #ffffff;
+
+  border: 1px solid #dde3ee;
+
   border-radius: 18px;
+
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(34,52,88,.06);
-  transition: transform .18s ease, box-shadow .18s ease;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow:
+    0 6px 16px rgba(34, 52, 88, 0.07);
+
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
 }
+
+
+/* 마우스를 올렸을 때 */
 
 .suspect-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 24px rgba(34,52,88,.11);
+
+  box-shadow:
+    0 10px 24px rgba(34, 52, 88, 0.13);
 }
+
+
+/* =====================================================
+   용의자 이미지
+===================================================== */
 
 .suspect-card img {
   display: block;
+
   width: 100%;
-  height: auto;
+
+  height: 100%;
+
+  /*
+    중요:
+    이미지 비율은 유지하고
+    카드 안에서 전체 내용이 보이도록 설정
+  */
+  object-fit: contain;
+
+  object-position: center;
+
+  background: #ffffff;
 }
 
-.suspect-card figcaption {
-  padding: 10px 12px;
-  text-align: center;
-  font-weight: 800;
-  color: var(--navy);
-  background: #f9fafc;
+
+/* =====================================================
+   아래 버튼 영역
+===================================================== */
+
+.bottom-navigation {
+  margin-top: 18px;
 }
 
-@media (max-width: 800px) {
+
+/* =====================================================
+   태블릿
+===================================================== */
+
+@media (max-width: 900px) {
+
   .suspect-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .suspect-card {
+    height: 350px;
+  }
+
 }
 
-@media (max-width: 520px) {
+
+/* =====================================================
+   휴대폰
+===================================================== */
+
+@media (max-width: 560px) {
+
   .suspect-grid {
     grid-template-columns: 1fr;
+
+    gap: 14px;
   }
+
+  .suspect-card {
+    height: 420px;
+  }
+
 }
