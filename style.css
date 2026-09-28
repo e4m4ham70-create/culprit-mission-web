@@ -221,6 +221,35 @@ textarea {
   .testimony {
     border-radius: 16px;
   }
+  .suspect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.suspect-card {
+  margin: 0;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(34,52,88,.06);
+}
+
+.suspect-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.suspect-card figcaption {
+  padding: 10px 12px;
+  text-align: center;
+  font-weight: 800;
+  color: var(--navy);
+  background: #f9fafc;
+}
 
   .hint-grid {
     grid-template-columns: 1fr;
